@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box; 
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #A3C4F3;
+}
+
+#menu{
+    height: 100px;
+    width: 100%;
+    background-color: #2C3E50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    
+}
+
+.blocos_menus{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blocos_menus a {
+    color: #6CAED9;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+.blocos_menus a:hover {
+    color: #578eb3;
+}
+
+/*------------------------------------------------------------*/
+#corpo{
+    width: 700px;
+    height: auto;
+    margin: 0 auto;  
+    padding: 20px; 
+    text-align: justify; 
+}
+
+.ficar_no_meio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#frase{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: #A3C4F3;
+    width: 100%;
+    height: 25px;
+}
+/*------------------------------------------------------------*/
+
+#rodape{
+    width: 100%;
+    height: 130px;
+    background-color: #2C3E50;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+
+#rodape .blocos_rodape{
+    flex: 1;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 7px solid;
+    border-color: black;
+    padding: 0 10px;
+    gap: 15px;
+    
+}
+
+#rodape .bloquinhos{
+    width: 33%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#rodape .blocos_rodape a{
+    
+    margin: 0 10px; 
+    font-size: 24px;
+}
+
+#formulario{
+    text-align: center;
+}
+
+.corpos{
+    width: 600px;
+    height: auto;
+    margin: 0 auto;  
+    padding: 20px; 
+    border: 1px solid;
+    border-color: black;
+    text-align: justify;  
+}
+
+/* manda o rodape la profinal tudo isso abaixo */
+.tudo {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+
+
+
+
