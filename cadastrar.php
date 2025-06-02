@@ -10,7 +10,7 @@ include_once('validacoes.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAGINA INDEX</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="view/css/style.css">
     <link rel="shortcut icon" href="view/img/livro.png" type="image/x-icon">
     <script src="controller/mascara.js" defer></script>
@@ -20,15 +20,15 @@ include_once('validacoes.php');
         <header>
             <nav id="menu">
                 <div class="blocos_menus">
-                    <a href="inicio.php" ><img src="img/lendo-um-livro.png" alt="icon" style="height: 60px; width: 60px; border-radius: 5px;"></a>
+                    <a href="inicio.php" ><img src="view/img/lendo-um-livro.png" alt="icon" style="height: 60px; width: 60px; border-radius: 5px;"></a>
                 </div>
 
                 <div class="blocos_menus">
-                    <a href="cadastrar.php" >Login</a>
+                    <a href="cadastrar.php" >Cadastrar-se</a>
                 </div> 
             
                 <div class="blocos_menus">
-                    <a href="login.php" >entrar</a>
+                    <a href="login.php" >Entrar</a>
                 </div>
                 
                
@@ -68,6 +68,7 @@ include_once('validacoes.php');
                             if ($cadUsuario->rowCount()) {
                                 echo "<p style='color: green;'>Usuário cadastrado com sucesso!</p><br>";
                                 $dados = []; // Limpa os dados do formulário
+                                header('Location: login.php');
                             } else {
                                 echo "<p style='color: red;'>Erro ao cadastrar usuário!</p><br>";
                             }
@@ -134,10 +135,10 @@ include_once('validacoes.php');
                     Visite nossos canal no instagram e no facebook
                 </p>
                 <a href="https://instagram.com/petshop" target="_blank">
-                    <img src="img/instagram.png" alt="logo instagram" style="height: 50px; width: 50px;">
+                    <img src="view/img/instagram.png" alt="logo instagram" style="height: 50px; width: 50px;">
                 </a>
                 <a href="https://facebook.com/petshop" target="_blank">
-                    <img src="img/facebook.png" alt="logo facebook" style="height: 50px; width: 50px;">
+                    <img src="view/img/facebook.png" alt="logo facebook" style="height: 50px; width: 50px;">
                 </a>
             </div>
         </footer>
