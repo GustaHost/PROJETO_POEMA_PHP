@@ -1,7 +1,7 @@
 <?php 
     session_start();
 
-    require_once 'model/conexao.php';
+    require_once '../model/conexao.php';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 1. Recebe e filtra os dados do formulário
@@ -15,7 +15,7 @@
         $_SESSION['login_erro'] = "Por favor, preencha todos os campos.";
         // Armazena o e-mail digitado para pré-preencher o formulário novamente
         $_SESSION['dados_login'] = ['emailLogin' => $email_do_usuario]; 
-        header('Location: login.php'); // Redireciona de volta para o formulário de login
+        header('Location: ../view/login.php'); // Redireciona de volta para o formulário de login
         exit; // Garante que o script pare a execução após o redirecionamento
     }
 
@@ -36,14 +36,14 @@
             $_SESSION['usuario_nome'] = $usuario['nome'];
             $_SESSION['usuario_email'] = $usuario['email'];
 
-            header('Location: pagina3.php'); // Redirecione para o painel ou página principal
+            header('Location: ../view/inicio2.php'); // Redirecione para o painel ou página principal
             exit;
 
         } else {
             // Usuário ou senha inválidos
             $_SESSION['login_erro'] = "E-mail ou senha inválidos.";
             $_SESSION['dados_login'] = ['emailLogin' => $email_do_usuario];
-            header('Location: login.php');
+            header('Location: ../view/login.php');
             exit;
         }
 
@@ -51,13 +51,13 @@
         $_SESSION['login_erro'] = "Erro interno. Tente novamente mais tarde.";
         $_SESSION['dados_login'] = ['emailLogin' => $email_do_usuario];
         // error_log("Erro no login: " . $e->getMessage());
-        header('Location: login.php');
+        header('Location: ../view/login.php');
         exit;
     }
 
 } else {
     // Caso o acesso não venha via POST
-    header('Location: login.php');
+    header('Location: ../view/login.php');
     exit;
 }
 ?>

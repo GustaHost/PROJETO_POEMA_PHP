@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-    <link rel="stylesheet" href="view/css/style.css">
-    <link rel="shortcut icon" href="view/img/livro.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/livro.png" type="image/x-icon">
     <script src="controller/mascara.js" defer></script>
 </head>
 <body>
@@ -13,7 +13,7 @@
         <header>
             <nav id="menu">
                 <div class="blocos_menus">
-                    <a href="inicio.php" ><img src="view/img/lendo-um-livro.png" alt="icon" style="height: 60px; width: 60px; border-radius: 5px;"></a>
+                    <a href="inicio.php" ><img src="img/lendo-um-livro.png" alt="icon" style="height: 60px; width: 60px; border-radius: 5px;"></a>
                 </div>
 
                 <div class="blocos_menus">
@@ -47,7 +47,7 @@
                     }
                     ?>
 
-                    <form name="login" method="post" action="processa_login.php">
+                    <form name="login" method="post" action="../controller/processa_login.php">
                         <LABEL>EMAIL: </LABEL>
                         <input type="text" name="email" id="emailLogin" placeholder="*******@*****.***" value="<?php if(isset($dados['emailLogin'])){echo htmlspecialchars($dados['emailLogin']);} ?>">
                         <br><br>
@@ -55,7 +55,7 @@
                         <input type="password" name="senha" id="senhaLogin" placeholder="************" value=""> 
                         <br><br>
                         <input type="submit" value="Entrar" name="loginFeito">
-                        <p><a href="esqueci_senha.php">Esqueci minha senha</a></p>
+                        <p><a href="esqueciSenha.php">Esqueci minha senha</a></p>
                         <br><br>
                         <p>Ainda não tem conta? <a href="cadastro.php">Cadastre-se aqui</a></p>
                 </form>
@@ -95,10 +95,10 @@
                     Visite nossos canal no instagram e no facebook
                 </p>
                 <a href="https://instagram.com/petshop" target="_blank">
-                    <img src="view/img/instagram.png" alt="logo instagram" style="height: 50px; width: 50px;">
+                    <img src="img/instagram.png" alt="logo instagram" style="height: 50px; width: 50px;">
                 </a>
                 <a href="https://facebook.com/petshop" target="_blank">
-                    <img src="view/img/facebook.png" alt="logo facebook" style="height: 50px; width: 50px;">
+                    <img src="img/facebook.png" alt="logo facebook" style="height: 50px; width: 50px;">
                 </a>
             </div>
         </footer>

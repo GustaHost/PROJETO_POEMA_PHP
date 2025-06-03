@@ -1,6 +1,6 @@
 <?php
-include_once('model/conexao.php');
-include_once('validacoes.php');
+include_once('../model/conexao.php');
+include_once('../controller/validacoes.php');
 
 
 ?>
@@ -11,8 +11,8 @@ include_once('validacoes.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="view/css/style.css">
-    <link rel="shortcut icon" href="view/img/livro.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/livro.png" type="image/x-icon">
     <script src="controller/mascara.js" defer></script>
 </head>
 <body>
@@ -20,7 +20,7 @@ include_once('validacoes.php');
         <header>
             <nav id="menu">
                 <div class="blocos_menus">
-                    <a href="inicio.php" ><img src="view/img/lendo-um-livro.png" alt="icon" style="height: 60px; width: 60px; border-radius: 5px;"></a>
+                    <a href="inicio.php" ><img src="img/lendo-um-livro.png" alt="icon" style="height: 60px; width: 60px; border-radius: 5px;"></a>
                 </div>
 
                 <div class="blocos_menus">
@@ -135,10 +135,10 @@ include_once('validacoes.php');
                     Visite nossos canal no instagram e no facebook
                 </p>
                 <a href="https://instagram.com/petshop" target="_blank">
-                    <img src="view/img/instagram.png" alt="logo instagram" style="height: 50px; width: 50px;">
+                    <img src="img/instagram.png" alt="logo instagram" style="height: 50px; width: 50px;">
                 </a>
                 <a href="https://facebook.com/petshop" target="_blank">
-                    <img src="view/img/facebook.png" alt="logo facebook" style="height: 50px; width: 50px;">
+                    <img src="img/facebook.png" alt="logo facebook" style="height: 50px; width: 50px;">
                 </a>
             </div>
         </footer>

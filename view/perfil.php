@@ -3,36 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAGINA 5</title>
+    <title>Perfil</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/livro.png" type="image/x-icon">
+    <script src="controller/mascara.js" defer></script>
 </head>
 <body>
     <div class="tudo">    
         <header>
             <nav id="menu">
                 <div class="blocos_menus">
-                    <a href="index.php" ><img src="img/lendo-um-livro.png" alt="icon" style="height: 60px; width: 60px; border-radius: 5px;"></a>
+                    <a href="inicio2.php" ><img src="img/lendo-um-livro.png" alt="icon" style="height: 60px; width: 60px; border-radius: 5px;"></a>
                 </div>
 
                 <div class="blocos_menus">
-                    <a href="pagina1.php" >pagina 1</a>
+                    <a href="poemas.php" >Poemas</a>
                 </div> 
             
                 <div class="blocos_menus">
-                    <a href="pagina2.php" >pagina 2</a>
+                    <a href="adicionarPoemas.php" >Adicionar Poemas</a>
                 </div>
                 
                 <div class="blocos_menus">
-                    <a href="pagina3.php" >pagina 3</a>
+                    <a href="editarPoemas.php">Editar e Atualizar Poemas</a>
                 </div>
 
                 <div class="blocos_menus">
-                    <a href="pagina4.php" >pagina 4</a>
-                </div>
-
-                <div class="blocos_menus">
-                    <a href="pagina5.php" >pagina 5</a>
+                    <a href="perfil.php" >Perfil</a>
                 </div>
 
                
@@ -40,8 +37,9 @@
         </header>
         <!------------------------------------------------------------------------------------------------------------------------------------------------>
         <main class="corpos">
-                <h1 class="ficar_no_meio">pagina 5</h1>
+                <h1 class="ficar_no_meio">Perfil</h1>
 
+                <p><a href="inicio.php">SAIR</a></p>
                 
             </main>
         
