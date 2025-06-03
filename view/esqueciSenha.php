@@ -13,24 +13,17 @@
         <header>
             <nav id="menu">
                 <div class="blocos_menus">
-                    <a href="inicio2.php" ><img src="img/lendo-um-livro.png" alt="icon" style="height: 60px; width: 60px; border-radius: 5px;"></a>
+                    <a href="inicio.php" ><img src="img/lendo-um-livro.png" alt="icon" style="height: 60px; width: 60px; border-radius: 5px;"></a>
                 </div>
 
                 <div class="blocos_menus">
-                    <a href="poemas.php" >Poemas</a>
+                    <a href="cadastrar.php" >Cadastrar-se</a>
                 </div> 
             
                 <div class="blocos_menus">
-                    <a href="adicionarPoemas.php" >Adicionar Poemas</a>
-                </div>
-                
-                <div class="blocos_menus">
-                    <a href="editarPoemas.php">Editar e Atualizar Poemas</a>
+                    <a href="login.php" >Entrar</a>
                 </div>
 
-                <div class="blocos_menus">
-                    <a href="perfil.php" >Perfil</a>
-                </div>
 
                
             </nav>
