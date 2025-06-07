@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>A Alma Por Trás do Verso</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/livro.png" type="image/x-icon">
     <script src="controller/mascara.js" defer></script>
@@ -17,6 +17,10 @@
                 </div>
 
                 <div class="blocos_menus">
+                    <a href="sobreNos.php" >Sobre nós</a>
+                </div>
+
+                <div class="blocos_menus">
                     <a href="cadastrar.php" >Cadastrar-se</a>
                 </div> 
             
@@ -24,12 +28,14 @@
                     <a href="login.php" >Entrar</a>
                 </div>
 
+                
+
                
             </nav>
         </header>
         <!------------------------------------------------------------------------------------------------------------------------------------------------>
         <main class="corpos">
-                <h1 class="ficar_no_meio">LOGIN</h1>
+                <h1 class="ficar_no_meio">Entrar</h1>
 
                 <?php 
                     session_start();

@@ -3,7 +3,7 @@
 session_start(); 
 
 require_once '../model/conexao.php'; 
-require_once '../model/editarPoema.php';
+require_once '../model/classPoema.php';
 require_once '../controller/novoPoemaController.php'; 
 
 $poemaModel = new Poema($pdo);

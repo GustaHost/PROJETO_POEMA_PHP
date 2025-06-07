@@ -40,12 +40,15 @@ body{
 }
 
 /*------------------------------------------------------------*/
-#corpo{
-    width: 700px;
+.corpos{
+    width: 800px;
     height: auto;
     margin: 0 auto;  
     padding: 20px; 
-    text-align: justify; 
+    
+    text-align: justify;  
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(31, 91, 255, 0.993);
 }
 
 .ficar_no_meio{
@@ -110,15 +113,7 @@ body{
     text-align: center;
 }
 
-.corpos{
-    width: 600px;
-    height: auto;
-    margin: 0 auto;  
-    padding: 20px; 
-    border: 1px solid;
-    border-color: black;
-    text-align: justify;  
-}
+
 
 /* manda o rodape la profinal tudo isso abaixo */
 .tudo {

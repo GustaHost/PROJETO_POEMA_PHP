@@ -17,7 +17,7 @@ $ultimoPoemaVisualizadoId = $_COOKIE['ultimo_poema_visualizado_id'] ?? '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POEMAS</title>
+    <title>A Alma Por Trás do Verso</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/livro.png" type="image/x-icon">
     <script src="controller/mascara.js" defer></script>
@@ -43,6 +43,10 @@ $ultimoPoemaVisualizadoId = $_COOKIE['ultimo_poema_visualizado_id'] ?? '';
                 </div>
 
                 <div class="blocos_menus">
+                    <a href="sobreNos2.php" >Sobre nós</a>
+                </div>
+
+                <div class="blocos_menus">
                     <a href="perfil.php" >Perfil</a>
                 </div>
 
@@ -62,12 +66,7 @@ $ultimoPoemaVisualizadoId = $_COOKIE['ultimo_poema_visualizado_id'] ?? '';
                 if($cadUsuario->rowCount() != 0)
                 {?>
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Autor:</th>
-                            <th>Poema:</th>
-                        </tr>
-                    </thead>
+                    
                     <tbody>
                         <?php
                             while($rowTable = $cadUsuario->fetch(PDO::FETCH_ASSOC)){

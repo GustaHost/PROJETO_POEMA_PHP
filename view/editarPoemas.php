@@ -18,7 +18,7 @@ $ultimoPoemaEditadoId = $_COOKIE ['ultimo_poema_editado_id'] ?? '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar e Atualizar Poemas</title>
+    <title>A Alma Por Trás do Verso</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/livro.png" type="image/x-icon">
     <script src="controller/mascara.js" defer></script>
@@ -38,6 +38,9 @@ $ultimoPoemaEditadoId = $_COOKIE ['ultimo_poema_editado_id'] ?? '';
                 </div>
                 <div class="blocos_menus">
                     <a href="editarPoemas.php">Editar e Atualizar Poemas</a>
+                </div>
+                <div class="blocos_menus">
+                    <a href="sobreNos2.php" >Sobre nós</a>
                 </div>
                 <div class="blocos_menus">
                     <a href="perfil.php" >Perfil</a>
