@@ -2,6 +2,11 @@
 session_start();
 require_once '../controller/novoPoemaController.php';
 
+if (isset($_POST['nomeAutor']) && !empty($_POST['nomeAutor'])) {
+    setcookie('ultimo_autor_adicionado', $_POST['nomeAutor'], time() + (86400 * 30), "/"); // Cookie válido por 30 dias
+}
+
+$ultimoAutor = $_COOKIE['ultimo_autor_adicionado'] ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

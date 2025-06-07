@@ -1,5 +1,15 @@
 <?php
 require_once '../model/conexao.php';
+
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $poemaIdVisualizado = filter_var($_GET['id'], FILTER_VALIDATE_INT);
+    if ($poemaIdVisualizado) {
+        setcookie('ultimo_poema_visualizado_id', $poemaIdVisualizado, time() + (86400 * 30), "/"); // Cookie válido por 30 dias
+    }
+}
+$ultimoPoemaVisualizadoId = $_COOKIE['ultimo_poema_visualizado_id'] ?? '';
+
+
 ?>
 
 <!DOCTYPE html>
