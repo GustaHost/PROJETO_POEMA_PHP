@@ -1,10 +1,26 @@
 <?php
+// controller/validacoes.php
 function validarDados($dados) {
     $validacao = [];
 
-    if (in_array("", $dados)) {
-        $validacao[] = "Existem campos em branco!";
+    // Validar se todos os campos estão vazios
+    // Melhor fazer uma checagem mais específica do que in_array("", $dados)
+    if (empty($dados['nome'])) {
+        $validacao[] = "O campo Nome é obrigatório.";
     }
+    if (empty($dados['cpf'])) {
+        $validacao[] = "O campo CPF é obrigatório.";
+    }
+    if (empty($dados['email'])) {
+        $validacao[] = "O campo E-mail é obrigatório.";
+    }
+    if (empty($dados['senha'])) {
+        $validacao[] = "O campo Senha é obrigatório.";
+    }
+    if (empty($dados['telefone'])) {
+        $validacao[] = "O campo Telefone é obrigatório.";
+    }
+
 
     if (preg_match('/[0-9]/', $dados['nome'])) {
         $validacao[] = "O nome não pode conter números.";
@@ -20,6 +36,10 @@ function validarDados($dados) {
 
     if (!preg_match('/^\(\d{2}\) \d{5}-\d{4}$/', $dados['telefone'])) {
         $validacao[] = "Telefone inválido. Formato esperado: (00) 00000-0000";
+    }
+
+    if (strlen($dados['senha']) < 6) { // Exemplo de validação de tamanho de senha
+        $validacao[] = "A senha deve ter no mínimo 6 caracteres.";
     }
 
     return $validacao;
