@@ -1,3 +1,7 @@
+<?php
+require_once '../model/conexao.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -38,8 +42,50 @@
         <!------------------------------------------------------------------------------------------------------------------------------------------------>
         <main class="corpos">
                 <h1 class="ficar_no_meio">POEMAS</h1>
-
                 
+                <?php
+                $queryUsu = "SELECT nomeAutor, novoPoema FROM tabelaPoemas";
+                $cadUsuario = $pdo->prepare($queryUsu);
+                $cadUsuario->execute();
+
+                //Listando os poemas
+                if($cadUsuario->rowCount() != 0)
+                {?>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Autor:</th>
+                            <th>Poema:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            while($rowTable = $cadUsuario->fetch(PDO::FETCH_ASSOC)){
+                                $nomeAutor = $rowTable['nomeAutor'];
+                                $novoPoema = $rowTable['novoPoema'];
+
+                                //Garantir para que não venha poemas vazios
+                                if(!empty($nomeAutor) && !empty($novoPoema)){
+                                ?>
+                                    <div class="poema-item"> 
+                                    <p class="poema-autor"><strong>Autor:</strong> 
+                                    <?php echo htmlspecialchars($nomeAutor);?></p>
+                                    <p class="poema-conteudo"><strong>Poema:</strong> <br>
+                                    <?php echo nl2br(htmlspecialchars($novoPoema));?></p>
+                                </div>
+                                <hr>
+                            <?php 
+                                } 
+                            } 
+                        ?>
+                    </tbody>
+                </table>
+            <?php
+                }
+                else{
+                    echo "<p style='color: red; text-align: center;'>Não existem registros a serem listados.</><br>";
+                }
+                ?>                       
             </main>
         
 

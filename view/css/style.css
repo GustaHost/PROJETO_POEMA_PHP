@@ -141,8 +141,16 @@ footer {
     padding: 10px;
 }
 
+/* Página Adicionar Poemas */
 
+.form-novoPoema{
+    margin: 7rem;
+}
 
+textarea{
+  overflow: auto;
+  resize: vertical;
+}
 
 
 

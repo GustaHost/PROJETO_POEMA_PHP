@@ -13,6 +13,20 @@ TRUNCATE TABLE tabelaEscritores; -- apaga tudo os registros
 
 select * from tabelaEscritores;
 
+/*Tabela para adicionar novos poemas */
+
+
+CREATE TABLE tabelaPoemas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nomeAutor VARCHAR(255),
+    novoPoema LONGTEXT   
+);
+
+TRUNCATE TABLE tabelaPoemas; -- apaga tudo os registros
+
+select * from tabelaPoemas;
+
+
 
 
 
