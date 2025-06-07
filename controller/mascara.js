@@ -19,3 +19,4 @@ function mascaraTelefone() {
     .replace(/(\d{5})(\d)/, '$1-$2')        // Coloca hífen depois do quinto dígito
     .replace(/(-\d{4})\d+?$/, '$1');        // Impede digitação além do formato
 }
+

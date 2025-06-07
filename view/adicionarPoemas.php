@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once '../controller/novoPoemaController.php';
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -35,13 +40,36 @@
                
             </nav>
         </header>
-        <!------------------------------------------------------------------------------------------------------------------------------------------------>
-        <main class="corpos">
+        <!---------------------------------------------------------------------------------------------------------------------------------------------->
+
+        <body>
+            <main class="corpos">
+                
                 <h1 class="ficar_no_meio">Adicionar Poemas</h1>
 
-                
+                <?php
+                if(isset($_SESSION['msg_sucesso'])){
+                    echo"<p id='mensagemSucesso' style ='color:green; text-align: center;'>" . $_SESSION['msg_sucesso'] . "</php>";
+                    unset($_SESSION['msg_sucesso']);
+                }
+                if(isset($_SESSION['msg_erro'])){
+                    echo"<p id='mensagemErro' style= 'color: red; text-align: center;'>" . $_SESSION['msg_erro'] . "</p>";
+                    unset($_SESSION['msg_erro']);
+                }
+
+                ?>
+
+                <form action="" method="post">
+                        <label>Autor:</label><br><br>
+                        <input type="text" name="nomeAutor" id="nomeAutor" placeholder="Nome" onkeyup="somenteLetras(this);" value= "<?php if(isset($_POST['nomeAutor'])){echo $_POST['nomeAutor'];}?>"></input>
+                    <br><br>
+                        <label>Poema:</label><br><br>
+                        <textarea type="text" name="novoPoema" id="novoPoema" placeholder="Era uma vez..." value="<?php if(isset($_POST['novoPoema'])){echo $_POST['novoPoema'];}?>"></textarea>
+                    <br><br>
+                        <input type="submit" value="SALVAR" name="cadastrarPoema">
+                </form>
             </main>
-        
+        </body>
 
          <!------------------------------------------------------------------------------------------------------------------------------------------------>
          <p id="frase">

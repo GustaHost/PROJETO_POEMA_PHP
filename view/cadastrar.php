@@ -37,7 +37,7 @@ include_once('../controller/validacoes.php');
             </nav>
         </header>
         <!------------------------------------------------------------------------------------------------------------------------------------------------>
-        <main class="corpos">
+            <main class="corpos">
                 <h1 class="ficar_no_meio">CADASTRAR-SE</h1>
 
                 <?php 
