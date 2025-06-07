@@ -38,6 +38,7 @@
         <!------------------------------------------------------------------------------------------------------------------------------------------------>
         <main class="corpos">
                 <h1 class="ficar_no_meio">Adicionar Poemas</h1>
+                <label for="autor">Nome do escritor:</label>
 
                 
             </main>
