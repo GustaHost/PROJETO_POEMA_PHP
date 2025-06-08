@@ -14,9 +14,9 @@ function mascaraCPF()
 function mascaraTelefone() {
   var tel = document.getElementById('telefone');
   tel.value = tel.value
-    .replace(/\D/g, '')                     // Remove tudo que não é dígito
-    .replace(/^(\d{2})(\d)/, '($1) $2')     // Coloca parênteses nos dois primeiros dígitos
-    .replace(/(\d{5})(\d)/, '$1-$2')        // Coloca hífen depois do quinto dígito
-    .replace(/(-\d{4})\d+?$/, '$1');        // Impede digitação além do formato
+    .replace(/\D/g, '')                     
+    .replace(/^(\d{2})(\d)/, '($1) $2')     
+    .replace(/(\d{5})(\d)/, '$1-$2')        
+    .replace(/(-\d{4})\d+?$/, '$1');       
 }
 

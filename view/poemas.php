@@ -55,65 +55,54 @@ $ultimoPoemaVisualizadoId = $_COOKIE['ultimo_poema_visualizado_id'] ?? '';
         </header>
         <!------------------------------------------------------------------------------------------------------------------------------------------------>
         <main class="corpos">
-                <h1 class="ficar_no_meio">POEMAS</h1>
-                
-                <?php
-                $queryUsu = "SELECT nomeAutor, novoPoema FROM tabelaPoemas";
-                $cadUsuario = $pdo->prepare($queryUsu);
-                $cadUsuario->execute();
+            <h1 class="ficar_no_meio">POEMAS</h1>
 
-                //Listando os poemas
-                if($cadUsuario->rowCount() != 0)
-                {?>
-                <table>
-                    
-                    <tbody>
-                        <?php
-                            while($rowTable = $cadUsuario->fetch(PDO::FETCH_ASSOC)){
-                                $nomeAutor = $rowTable['nomeAutor'];
-                                $novoPoema = $rowTable['novoPoema'];
-
-                                //Garantir para que não venha poemas vazios
-                                if(!empty($nomeAutor) && !empty($novoPoema)){
-                                ?>
-                                    <div class="poema-item"> 
-                                    <p class="poema-autor"><strong>Autor:</strong> 
-                                    <?php echo htmlspecialchars($nomeAutor);?></p>
-                                    <p class="poema-conteudo"><strong>Poema:</strong> <br>
-                                    <?php echo nl2br(htmlspecialchars($novoPoema));?></p>
-                                </div>
-                                <hr>
-                            <?php 
-                                } 
-                            } 
-                        ?>
-                    </tbody>
-                </table>
             <?php
-                }
-                else{
-                    echo "<p style='color: red; text-align: center;'>Não existem registros a serem listados.</><br>";
-                }
-                ?>                       
-            </main>
+            $queryUsu = "SELECT nomeAutor, novoPoema FROM tabelaPoemas";
+            $cadUsuario = $pdo->prepare($queryUsu);
+            $cadUsuario->execute();
+
+            if($cadUsuario->rowCount() != 0) { ?>
+                <div class="lista-itens-cadastrados">
+                    <?php
+                    while($rowTable = $cadUsuario->fetch(PDO::FETCH_ASSOC)){
+                        $nomeAutor = $rowTable['nomeAutor'];
+                        $novoPoema = $rowTable['novoPoema'];
+
+                        
+                        if(!empty($nomeAutor) && !empty($novoPoema)){
+                        ?>
+                        <div class="item-cadastrado"> 
+                            <p><strong>Autor:</strong> <?php echo htmlspecialchars($nomeAutor);?></p>
+                            <p><strong>Poema:</strong> <br><?php echo nl2br(htmlspecialchars($novoPoema));?></p>
+                        </div>
+                        <?php 
+                        } 
+                    } 
+                    ?>
+                </div>
+            <?php
+            } else {
+                echo "<p class='texto-informacao'>Não existem poemas para serem listados.</p>";
+            }
+            ?>
+        </main>
         
 
          <!------------------------------------------------------------------------------------------------------------------------------------------------>
-         <p id="frase">
-            muito obrigado por visitar o site
-        </p>
+         
         <footer id="rodape">
             
             
             <div class="blocos_rodape">
                 <div class="bloquinhos">
-                    <p><strong>Atendimento:</strong> (11) 99999-9999 | contato@petshop.com</p>
+                    <p><strong>Atendimento:</strong> (11) 99999-9999 | contato@livros.com</p>
                 </div>
                 <div class="bloquinhos">
-                    <p><strong>Endereço:</strong> Rua dos Bichinhos, 123 - São Paulo, SP</p>
+                    <p><strong>Endereço:</strong> Rua dos livros, 123 - São Paulo, SP</p>
                 </div>
                 <div class="bloquinhos">
-                    <p><strong>Horário:</strong> Seg a Sáb - 9h às 18h</p>
+                    <p><strong>Horário de funcionamento do site:</strong> Seg a Sáb - 9h às 18h</p>
                 </div>
                 
                 
@@ -124,10 +113,10 @@ $ultimoPoemaVisualizadoId = $_COOKIE['ultimo_poema_visualizado_id'] ?? '';
                 <p>
                     Visite nossos canal no instagram e no facebook
                 </p>
-                <a href="https://instagram.com/petshop" target="_blank">
+                <a href="https://instagram.com/livros" target="_blank">
                     <img src="img/instagram.png" alt="logo instagram" style="height: 50px; width: 50px;">
                 </a>
-                <a href="https://facebook.com/petshop" target="_blank">
+                <a href="https://facebook.com/livros" target="_blank">
                     <img src="img/facebook.png" alt="logo facebook" style="height: 50px; width: 50px;">
                 </a>
             </div>

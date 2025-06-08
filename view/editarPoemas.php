@@ -52,69 +52,92 @@ $ultimoPoemaEditadoId = $_COOKIE ['ultimo_poema_editado_id'] ?? '';
             <h1 class="ficar_no_meio">Editar e Atualizar Poemas</h1>
 
             <?php 
-            if ($msg_sucesso): ?><p id="mensagemSucesso" style="color:green; text-align:center;"><?php echo htmlspecialchars($msg_sucesso); ?></p><?php endif; ?>
-            <?php if ($msg_erro): ?><p id="mensagemErro" style="color:red; text-align: center;"><?php echo htmlspecialchars($msg_erro); ?></p><?php endif; ?>
-            <?php if ($msg_info): ?><p style='color: gray; text-align: center;'><?php echo htmlspecialchars($msg_info); ?></p><?php endif; ?>
+            
+            if ($msg_sucesso): ?>
+                <p class="mensagem-sucesso"><?php echo htmlspecialchars($msg_sucesso); ?></p>
+            <?php endif; ?>
+            <?php if ($msg_erro): ?>
+                <p class="mensagem-erro"><?php echo htmlspecialchars($msg_erro); ?></p>
+            <?php endif; ?>
+            <?php if ($msg_info): ?>
+                <p class="mensagem-info"><?php echo htmlspecialchars($msg_info); ?></p>
+            <?php endif; ?>
 
-            <?php if ($poemaParaEditar): // Mostra o formulário de edição se um poema foi carregado pelo Controller ?>
-                <form action="" name="AtualizarUsuario" method="POST">
-                    <label>ID:</label>
-                    <input type="text" name="id" value="<?php echo htmlspecialchars($poemaParaEditar['id']); ?>" readonly><br><br>
+            <?php if ($poemaParaEditar):  ?>
+                <div class="container-do-formulario">
+                    <h2 class="ficar_no_meio">Editar Poema</h2>
+                    <form action="" name="AtualizarUsuario" method="POST">
+                        <div class="grupo-de-campo">
+                            <label for="id">ID:</label>
+                            <input type="text" name="id" id="id" class="campo-de-entrada" value="<?php echo htmlspecialchars($poemaParaEditar['id']); ?>" readonly>
+                        </div>
 
-                    <label>Autor:</label>
-                    <input type="text" name="nomeAutor" id="nomeAutor" placeholder="Nome" value="<?php echo htmlspecialchars($poemaParaEditar['nomeAutor']); ?>" required><br><br>
+                        <div class="grupo-de-campo">
+                            <label for="nomeAutor">Autor:</label>
+                            <input type="text" name="nomeAutor" id="nomeAutor" placeholder="Nome do autor" class="campo-de-entrada" value="<?php echo htmlspecialchars($poemaParaEditar['nomeAutor']); ?>" required>
+                        </div>
 
-                    <label>Poema:</label>
-                    <textarea name="novoPoema" id="novoPoema" placeholder="Poema" rows="10" cols="50" required><?php echo htmlspecialchars($poemaParaEditar['novoPoema']); ?></textarea><br><br>
+                        <div class="grupo-de-campo">
+                            <label for="novoPoema">Poema:</label>
+                            <textarea name="novoPoema" id="novoPoema" placeholder="Conteúdo do poema" rows="10" class="campo-de-entrada" required><?php echo htmlspecialchars($poemaParaEditar['novoPoema']); ?></textarea>
+                        </div>
 
-                    <input type="submit" value="Atualizar" name="AtualizarUsu">
-                </form>
+                        <button type="submit" name="AtualizarUsu" class="botao-de-envio">Atualizar Poema</button>
+                    </form>
+                </div>
             <?php endif; ?>
 
             <?php 
-            // Mostra a lista de poemas, usando os dados do Controller
+          
             if (!empty($listaDePoemas)): ?>
-                <div class="lista-poemas">
+                
+                <div class="lista-itens-cadastrados">
                     <?php foreach ($listaDePoemas as $rowTable): ?>
-                        <div>
+                        <div class="item-cadastrado">
                             <p><strong>ID:</strong> <?php echo htmlspecialchars($rowTable['id']);?></p>
                             <p><strong>Autor:</strong> <?php echo htmlspecialchars($rowTable['nomeAutor']);?></p>
                             <p><strong>Poema:</strong> <br><?php echo nl2br(htmlspecialchars($rowTable['novoPoema']));?></p>
-                            <div>
-                                <a href="editarPoemas.php?action=excluir&id=<?php echo htmlspecialchars($rowTable['id']); ?>" onclick="return confirm('Tem certeza que deseja excluir este poema?');">Excluir</a>
-                                <a href="editarPoemas.php?action=editar&id=<?php echo htmlspecialchars($rowTable['id']); ?>">Editar</a>
+                            <div class="acoes-item">
+                                <a href="editarPoemas.php?action=excluir&id=<?php echo htmlspecialchars($rowTable['id']); ?>" class="botao-acao botao-excluir" onclick="return confirm('Tem certeza que deseja excluir este poema?');">Excluir</a>
+                                <a href="editarPoemas.php?action=editar&id=<?php echo htmlspecialchars($rowTable['id']); ?>" class="botao-acao botao-editar">Editar</a>
                             </div>
                         </div>
-                        <hr>
                     <?php endforeach; ?>
                 </div>
             <?php 
-            // Se não há poemas e nenhuma outra mensagem, exibe um aviso padrão
-            elseif (empty($msg_info) && empty($msg_erro)): ?>
-                <p style='color: red; text-align: center;'>Não existem registros a serem listados.</p><br>
+           
+            elseif (empty($msg_info) && empty($msg_erro) && empty($msg_sucesso) && empty($poemaParaEditar)): ?>
+                <p class="texto-informacao">Não existem poemas cadastrados.</p>
             <?php endif; ?>
-
         </main>
         
-        <p id="frase">muito obrigado por visitar o site</p>
+        
         <footer id="rodape">
+            
+            
             <div class="blocos_rodape">
                 <div class="bloquinhos">
-                    <p><strong>Atendimento:</strong> (11) 99999-9999 | contato@petshop.com</p>
+                    <p><strong>Atendimento:</strong> (11) 99999-9999 | contato@livros.com</p>
                 </div>
                 <div class="bloquinhos">
-                    <p><strong>Endereço:</strong> Rua dos Bichinhos, 123 - São Paulo, SP</p>
+                    <p><strong>Endereço:</strong> Rua dos livros, 123 - São Paulo, SP</p>
                 </div>
                 <div class="bloquinhos">
-                    <p><strong>Horário:</strong> Seg a Sáb - 9h às 18h</p>
+                    <p><strong>Horário de funcionamento do site:</strong> Seg a Sáb - 9h às 18h</p>
                 </div>
+                
+                
+                
             </div>
+
             <div class="blocos_rodape">
-                <p>Visite nossos canal no instagram e no facebook</p>
-                <a href="https://instagram.com/petshop" target="_blank">
+                <p>
+                    Visite nossos canal no instagram e no facebook
+                </p>
+                <a href="https://instagram.com/livros" target="_blank">
                     <img src="img/instagram.png" alt="logo instagram" style="height: 50px; width: 50px;">
                 </a>
-                <a href="https://facebook.com/petshop" target="_blank">
+                <a href="https://facebook.com/livros" target="_blank">
                     <img src="img/facebook.png" alt="logo facebook" style="height: 50px; width: 50px;">
                 </a>
             </div>

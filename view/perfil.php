@@ -43,29 +43,26 @@
         </header>
         <!------------------------------------------------------------------------------------------------------------------------------------------------>
         <main class="corpos">
-                <h1 class="ficar_no_meio">Perfil</h1>
+            <h1 class="ficar_no_meio">Perfil</h1>
 
-                <p><a href="inicio.php">SAIR</a></p>
-                
-            </main>
+            <a href="inicio.php" class="botao-de-envio" style="max-width: 200px; margin: 30px auto; display: block;">SAIR</a>
+        </main>
         
 
          <!------------------------------------------------------------------------------------------------------------------------------------------------>
-         <p id="frase">
-            muito obrigado por visitar o site
-        </p>
+        
         <footer id="rodape">
             
             
             <div class="blocos_rodape">
                 <div class="bloquinhos">
-                    <p><strong>Atendimento:</strong> (11) 99999-9999 | contato@petshop.com</p>
+                    <p><strong>Atendimento:</strong> (11) 99999-9999 | contato@livros.com</p>
                 </div>
                 <div class="bloquinhos">
-                    <p><strong>Endereço:</strong> Rua dos Bichinhos, 123 - São Paulo, SP</p>
+                    <p><strong>Endereço:</strong> Rua dos livros, 123 - São Paulo, SP</p>
                 </div>
                 <div class="bloquinhos">
-                    <p><strong>Horário:</strong> Seg a Sáb - 9h às 18h</p>
+                    <p><strong>Horário de funcionamento do site:</strong> Seg a Sáb - 9h às 18h</p>
                 </div>
                 
                 
@@ -76,10 +73,10 @@
                 <p>
                     Visite nossos canal no instagram e no facebook
                 </p>
-                <a href="https://instagram.com/petshop" target="_blank">
+                <a href="https://instagram.com/livros" target="_blank">
                     <img src="img/instagram.png" alt="logo instagram" style="height: 50px; width: 50px;">
                 </a>
-                <a href="https://facebook.com/petshop" target="_blank">
+                <a href="https://facebook.com/livros" target="_blank">
                     <img src="img/facebook.png" alt="logo facebook" style="height: 50px; width: 50px;">
                 </a>
             </div>

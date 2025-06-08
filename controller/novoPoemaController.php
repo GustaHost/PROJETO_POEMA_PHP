@@ -5,14 +5,14 @@ include_once('../controller/validacoesPoema.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            //Especificando para pegar somente dois campos
+            
             $dados = [
                 'nomeAutor' => filter_input(INPUT_POST, 'nomeAutor', FILTER_DEFAULT),
                 'novoPoema' => filter_input(INPUT_POST, 'novoPoema', FILTER_DEFAULT),
                 'cadastrarPoema' => filter_input(INPUT_POST, 'cadastrarPoema', FILTER_DEFAULT)
             ];
 
-            //Buscando os dados
+            
 
             if(!empty($dados['cadastrarPoema'])){
             $dados = array_map('trim', $dados);
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $validar = validarPoemas($dados);
 
-            //Conexão com banco de dados
+            
             try{
                 if(empty($validar)){
                     $queryUsu = "INSERT INTO tabelaPoemas (nomeAutor, novoPoema)
@@ -46,3 +46,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 }   
+?>

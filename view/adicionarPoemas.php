@@ -51,7 +51,7 @@ $ultimoAutor = $_COOKIE['ultimo_autor_adicionado'] ?? '';
         </header>
         <!---------------------------------------------------------------------------------------------------------------------------------------------->
 
-        <body>
+        
             <main class="corpos">
                 
                 <h1 class="ficar_no_meio">Adicionar Poemas</h1>
@@ -67,23 +67,26 @@ $ultimoAutor = $_COOKIE['ultimo_autor_adicionado'] ?? '';
                 }
 
                 ?>
-
-                <form action="" method="post">
-                        <label>Autor:</label><br><br>
-                        <input type="text" name="nomeAutor" id="nomeAutor" placeholder="Nome" onkeyup="somenteLetras(this);" value= "<?php if(isset($_POST['nomeAutor'])){echo $_POST['nomeAutor'];}?>"></input>
-                    <br><br>
-                        <label>Poema:</label><br><br>
-                        <textarea type="text" name="novoPoema" id="novoPoema" placeholder="Era uma vez..." value="<?php if(isset($_POST['novoPoema'])){echo $_POST['novoPoema'];}?>"></textarea>
-                    <br><br>
-                        <input type="submit" value="SALVAR" name="cadastrarPoema">
-                </form>
+                <div class="container-do-formulario"> 
+                    <form action="" method="post">
+                        <div class="grupo-de-campo"> 
+                            <label>Autor:</label><br><br>
+                            <input type="text" name="nomeAutor" id="nomeAutor" placeholder="Nome" onkeyup="somenteLetras(this);" value= "<?php if(isset($_POST['nomeAutor'])){echo $_POST['nomeAutor'];}?>"></input>
+                        </div>
+                        <br><br>
+                        <div class="grupo-de-campo"> 
+                            <label>Poema:</label><br><br>
+                            <textarea type="text" name="novoPoema" id="novoPoema" placeholder="Era uma vez..." value="<?php if(isset($_POST['novoPoema'])){echo $_POST['novoPoema'];}?>"></textarea>
+                        </div>
+                        <br><br>
+                            <input type="submit" class="botao-de-envio" value="SALVAR" name="cadastrarPoema">
+                    </form>
+                </div>
             </main>
-        </body>
+        
 
          <!------------------------------------------------------------------------------------------------------------------------------------------------>
-         <p id="frase">
-            muito obrigado por visitar o site
-        </p>
+        
         <footer id="rodape">
             
             

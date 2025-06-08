@@ -1,14 +1,14 @@
 <?php
-session_start(); // Inicia a sessão para recuperar mensagens e dados
+session_start(); 
 
-include_once('../model/conexao.php'); // Correção de caminho
-include_once('../controller/validacoes.php'); // Correção de caminho e a função validarDados está agora no controller
+include_once('../model/conexao.php'); 
+include_once('../controller/validacoes.php');
 
-// Recupera dados do formulário se houver erro (para repopular)
+
 $dados = [];
 if (isset($_SESSION['dados_formulario'])) {
     $dados = $_SESSION['dados_formulario'];
-    unset($_SESSION['dados_formulario']); // Limpa após usar
+    unset($_SESSION['dados_formulario']);
 }
 ?>
 
@@ -75,27 +75,38 @@ if (isset($_SESSION['dados_formulario'])) {
                 }
                 ?>
                 
+                <div class="container-do-formulario"> 
+                    <form name="cadastroUsuario" method="post" action="../controller/processa_cadastro.php">
+                        <div class="grupo-de-campo">
+                            <LABEL>NOME: </LABEL>
+                            <input type="text" name="nome" id="nome" placeholder="Nome completo" value="<?php if(isset($dados['nome'])){echo $dados['nome'];} ?>">
+                        </div>
+                        <br><br>
+                        <div class="grupo-de-campo">
+                            <label>CPF: </label>
+                            <input type="text" name="cpf" id="cpf" placeholder="Informe seu cpf" maxlength="14" onkeyup="mascaraCPF()" value="<?php if(isset($dados['cpf'])){echo $dados['cpf'];} ?>">
+                        </div>
+                        <br><br>
+                        <div class="grupo-de-campo">
+                            <LABEL>EMAIL: </LABEL>
+                            <input type="text" name="email" id="email" placeholder="Digite seu email" value="<?php if(isset($dados['email'])){echo $dados['email'];} ?>">
+                        </div>
+                        <br><br>
+                        <div class="grupo-de-campo">
+                            <LABEL>SENHA: </LABEL>
+                            <input type="password" name="senha" id="senha" placeholder="Digite uma senha" value="<?php if(isset($dados['senha'])){echo $dados['senha'];} ?>">
+                        </div>
+                        <br><br>
+                        <div class="grupo-de-campo">
+                            <LABEL>NUMERO: </LABEL>
+                            <input type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" onkeyup="mascaraTelefone()"  value="<?php if(isset($dados['telefone'])){echo $dados['telefone'];} ?>">
+                        </div>
+                        <br><br>
+                            <input type="submit" class="botao-de-envio" value="cadastroFeito" name="cadastroFeito">
 
-                <form name="cadastroUsuario" method="post" action="../controller/processa_cadastro.php">
-                    <LABEL>NOME: </LABEL>
-                    <input type="text" name="nome" id="nome" placeholder="Nome completo" value="<?php if(isset($dados['nome'])){echo $dados['nome'];} ?>">
-                    <br><br>
-                    <label>CPF: </label>
-                    <input type="text" name="cpf" id="cpf" placeholder="Informe seu cpf" maxlength="14" onkeyup="mascaraCPF()" value="<?php if(isset($dados['cpf'])){echo $dados['cpf'];} ?>">
-                    <br><br>
-                    <LABEL>EMAIL: </LABEL>
-                    <input type="text" name="email" id="email" placeholder="Digite seu email" value="<?php if(isset($dados['email'])){echo $dados['email'];} ?>">
-                    <br><br>
-                    <LABEL>SENHA: </LABEL>
-                    <input type="password" name="senha" id="senha" placeholder="Digite uma senha" value="<?php if(isset($dados['senha'])){echo $dados['senha'];} ?>">
-                    <br><br>
-                    <LABEL>NUMERO: </LABEL>
-                    <input type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" onkeyup="mascaraTelefone()"  value="<?php if(isset($dados['telefone'])){echo $dados['telefone'];} ?>">
-                    <br><br>
-                    <input type="submit" value="cadastroFeito" name="cadastroFeito">
 
-
-                </form>
+                    </form>
+                </div>
 
 
                 
@@ -103,21 +114,19 @@ if (isset($_SESSION['dados_formulario'])) {
         
 
          <!------------------------------------------------------------------------------------------------------------------------------------------------>
-         <p id="frase">
-            muito obrigado por visitar o site
-        </p>
+        
         <footer id="rodape">
             
             
             <div class="blocos_rodape">
                 <div class="bloquinhos">
-                    <p><strong>Atendimento:</strong> (11) 99999-9999 | contato@petshop.com</p>
+                    <p><strong>Atendimento:</strong> (11) 99999-9999 | contato@livros.com</p>
                 </div>
                 <div class="bloquinhos">
-                    <p><strong>Endereço:</strong> Rua dos Bichinhos, 123 - São Paulo, SP</p>
+                    <p><strong>Endereço:</strong> Rua dos livros, 123 - São Paulo, SP</p>
                 </div>
                 <div class="bloquinhos">
-                    <p><strong>Horário:</strong> Seg a Sáb - 9h às 18h</p>
+                    <p><strong>Horário de funcionamento do site:</strong> Seg a Sáb - 9h às 18h</p>
                 </div>
                 
                 
@@ -128,10 +137,10 @@ if (isset($_SESSION['dados_formulario'])) {
                 <p>
                     Visite nossos canal no instagram e no facebook
                 </p>
-                <a href="https://instagram.com/petshop" target="_blank">
+                <a href="https://instagram.com/livros" target="_blank">
                     <img src="img/instagram.png" alt="logo instagram" style="height: 50px; width: 50px;">
                 </a>
-                <a href="https://facebook.com/petshop" target="_blank">
+                <a href="https://facebook.com/livros" target="_blank">
                     <img src="img/facebook.png" alt="logo facebook" style="height: 50px; width: 50px;">
                 </a>
             </div>

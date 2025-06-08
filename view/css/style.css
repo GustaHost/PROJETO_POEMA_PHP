@@ -1,16 +1,29 @@
+/* --- Estilos Globais e Reset --- */
 * {
     box-sizing: border-box; 
 }
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #A3C4F3;
 }
 
-#menu{
+/* --- Container Principal da Página --- */
+.tudo {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Menu (Header) --- */
+#menu {
     height: 100px;
     width: 100%;
     background-color: #2C3E50;
@@ -18,10 +31,9 @@ body{
     justify-content: center;
     align-items: center;
     gap: 15px;
-    
 }
 
-.blocos_menus{
+.blocos_menus {
     flex: 1;
     height: 100%;
     display: flex;
@@ -35,53 +47,171 @@ body{
     font-weight: bold;
     font-size: 16px;
 }
+
 .blocos_menus a:hover {
     color: #578eb3;
 }
 
-/*------------------------------------------------------------*/
-.corpos{
+/* --- Área de Conteúdo Principal --- */
+.corpos {
+    flex: 1;
     width: 800px;
+    max-width: 95%;
     height: auto;
-    margin: 0 auto;  
+    margin: 20px auto;
     padding: 20px; 
-    
-    text-align: justify;  
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(31, 91, 255, 0.993);
+    background-color: #ffffff;
+    border-radius: 8px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.ficar_no_meio{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.ficar_no_meio {
+    margin-bottom: 25px;
+    color: #2C3E50;
+    font-size: 2em;
 }
 
-#frase{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    background-color: #A3C4F3;
+/* --- Estilos de Mensagens --- */
+.mensagem-sucesso {
+    color: green;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    background-color: #e6ffe6;
+    border: 1px solid #a3e6a3;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.mensagem-erro {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    background-color: #ffe6e6;
+    border: 1px solid #e6a3a3;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.mensagem-info {
+    color: #337ab7;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    background-color: #d9edf7;
+    border: 1px solid #bce8f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* --- Estilos Genéricos para Formulários --- */
+.container-do-formulario {
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    max-width: 450px;
+    margin: 30px auto;
+    border: 1px solid #e5e5e5;
+    text-align: left;
+}
+
+.grupo-de-campo {
+    margin-bottom: 18px;
+}
+
+.grupo-de-campo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1em;
+}
+
+.campo-de-entrada {
     width: 100%;
-    height: 25px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-/*------------------------------------------------------------*/
 
-#rodape{
+.campo-de-entrada:focus {
+    border-color: #6CAED9;
+    box-shadow: 0 0 0 3px rgba(108, 174, 217, 0.3);
+    outline: none;
+}
+
+.campo-de-entrada::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.botao-de-envio {
+    display: block;
+    width: 100%;
+    padding: 15px 25px;
+    background-color: #6CAED9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 25px;
+}
+
+.botao-de-envio:hover {
+    background-color: #578eb3;
+    transform: translateY(-2px);
+}
+
+.botao-de-envio:active {
+    transform: translateY(0);
+}
+
+.links-form {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+
+.links-form a {
+    color: #6CAED9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.links-form a:hover {
+    text-decoration: underline;
+}
+
+.texto-informacao {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+
+/* --- Rodapé Principal --- */
+#rodape {
     width: 100%;
     height: 130px;
     background-color: #2C3E50;
-
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
 }
 
-
-#rodape .blocos_rodape{
+#rodape .blocos_rodape {
     flex: 1;
     height: 90%;
     display: flex;
@@ -91,62 +221,179 @@ body{
     border-color: black;
     padding: 0 10px;
     gap: 15px;
-    
 }
 
-#rodape .bloquinhos{
+#rodape .bloquinhos {
     width: 33%;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
-#rodape .blocos_rodape a{
-    
+#rodape .blocos_rodape a {
     margin: 0 10px; 
     font-size: 24px;
 }
 
-#formulario{
-    text-align: center;
-}
-
-
-
-/* manda o rodape la profinal tudo isso abaixo */
-.tudo {
+/* --- Estilos para a Lista de Poemas --- */
+.lista-itens-cadastrados {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    gap: 20px;
+    text-align: left;
 }
 
-
-main {
-    flex: 1;
+.item-cadastrado {
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
     padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.item-cadastrado:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-footer {
-    background-color: #333;
-    color: #fff;
+.item-cadastrado p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.item-cadastrado p:last-of-type {
+    margin-bottom: 15px;
+}
+
+.item-cadastrado strong {
+    color: #2C3E50;
+}
+
+.acoes-item {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: flex-end;
+}
+
+.botao-acao {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
     text-align: center;
-    padding: 10px;
 }
 
-/* Página Adicionar Poemas */
+.botao-excluir {
+    background-color: #e74c3c;
+    color: white;
+    border: 1px solid #e74c3c;
+}
 
-.form-novoPoema{
+.botao-excluir:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+.botao-editar {
+    background-color: #6CAED9;
+    color: white;
+    border: 1px solid #6CAED9;
+}
+
+.botao-editar:hover {
+    background-color: #578eb3;
+    border-color: #578eb3;
+}
+
+/* --- Estilos Específicos --- */
+.form-novoPoema {
     margin: 7rem;
 }
 
-textarea{
-  overflow: auto;
-  resize: vertical;
+textarea {
+    overflow: auto;
+    resize: vertical;
 }
 
+/* --- Responsividade --- */
+@media (max-width: 600px) {
+    .corpos {
+        padding: 15px;
+    }
+    .ficar_no_meio {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+    .container-do-formulario {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    .grupo-de-campo label {
+        font-size: 0.95em;
+    }
+    .campo-de-entrada {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+    .botao-de-envio {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+    .links-form, .texto-informacao {
+        font-size: 0.85em;
+    }
 
+    #menu {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
 
+    .blocos_menus {
+        flex: 1 1 100%;
+        height: auto;
+        padding: 5px 0;
+    }
 
+    #rodape {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+    }
+
+    #rodape .blocos_rodape {
+        border: none;
+        padding: 5px 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #rodape .bloquinhos {
+        width: 100%;
+        height: auto;
+        padding: 5px 0;
+    }
+
+    /* Responsividade para a lista de poemas */
+    .lista-itens-cadastrados {
+        gap: 15px;
+    }
+    .item-cadastrado {
+        padding: 15px;
+    }
+    .acoes-item {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .botao-acao {
+        width: 100%;
+        padding: 12px;
+    }
+}

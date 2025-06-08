@@ -27,7 +27,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'excluir' && !empty($_GET['id']
     exit();
 }
 
-// Lógica de atualização
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['AtualizarUsu'])) {
     $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
     $nomeAutor = trim(filter_input(INPUT_POST, 'nomeAutor', FILTER_DEFAULT));
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['AtualizarUsu'])) {
     exit();
 }
 
-// Lógica de ediçãp
+
 if (isset($_GET['action']) && $_GET['action'] == 'editar' && !empty($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
     if ($id) {
@@ -62,7 +62,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'editar' && !empty($_GET['id'])
     }
 }
 
-//Lógica para pegar os poemas
+
 try {
     $listaDePoemas = $poemaModel->pegarTodos();
     if (empty($listaDePoemas)) {

@@ -1,10 +1,9 @@
 <?php
-// controller/validacoes.php
+
 function validarDados($dados) {
     $validacao = [];
 
-    // Validar se todos os campos estão vazios
-    // Melhor fazer uma checagem mais específica do que in_array("", $dados)
+    
     if (empty($dados['nome'])) {
         $validacao[] = "O campo Nome é obrigatório.";
     }

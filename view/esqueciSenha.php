@@ -36,57 +36,54 @@
         </header>
         <!------------------------------------------------------------------------------------------------------------------------------------------------>
         <main class="corpos">
-                <h1 class="ficar_no_meio">Recuperação de senha</h1>
+            <h1 class="ficar_no_meio">Recuperação de senha</h1>
 
-                <?php
-                    session_start(); // Inicia a sessão para acessar as mensagens
+            <?php
+            session_start(); 
 
-                    // Verifica e exibe a mensagem de SUCESSO
-                    if (isset($_SESSION['reset_mensagem'])) {
-                        echo '<p class="success-message">' . htmlspecialchars($_SESSION['reset_mensagem']) . '</p>';
-                        unset($_SESSION['reset_mensagem']); // Limpa a mensagem após exibir
-                    }
+            
+            if (isset($_SESSION['reset_mensagem'])) {
+                echo '<p class="mensagem-sucesso">' . htmlspecialchars($_SESSION['reset_mensagem']) . '</p>'; 
+                unset($_SESSION['reset_mensagem']); 
+            }
 
-                    // Verifica e exibe a mensagem de ERRO
-                    if (isset($_SESSION['reset_erro'])) {
-                        echo '<p class="error-message">' . htmlspecialchars($_SESSION['reset_erro']) . '</p>';
-                        unset($_SESSION['reset_erro']); // Limpa a mensagem após exibir
-                    }
-                    ?>
+            
+            if (isset($_SESSION['reset_erro'])) {
+                echo '<p class="mensagem-erro">' . htmlspecialchars($_SESSION['reset_erro']) . '</p>'; 
+                unset($_SESSION['reset_erro']); 
+            }
+            ?>
 
-                    <p>Informe seu endereço de e-mail para redefinir sua senha.</p>
+            <div class="container-do-formulario"> 
+                <p class="texto-informacao">Informe seu endereço de e-mail para redefinir sua senha.</p>
 
-
-                    <form action="../controller/processa_EsqueciSenha.php" method="POST">
+                <form action="../controller/processa_EsqueciSenha.php" method="POST">
+                    <div class="grupo-de-campo">
                         <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required>
-                        <input type="submit" value="Redefinir Senha">
-                    </form>
+                        <input type="email" id="email" name="email" required class="campo-de-entrada">
+                    </div>
+                    
+                    <button type="submit" class="botao-de-envio">Redefinir Senha</button> </form>
 
-
-                    <p><a href="login.php">Voltar para o Login</a></p>
-
-
-                
-            </main>
+                <p class="links-form"><a href="login.php">Voltar para o Login</a></p>
+            </div>
+        </main>
         
 
          <!------------------------------------------------------------------------------------------------------------------------------------------------>
-         <p id="frase">
-            muito obrigado por visitar o site
-        </p>
+         
         <footer id="rodape">
             
             
             <div class="blocos_rodape">
                 <div class="bloquinhos">
-                    <p><strong>Atendimento:</strong> (11) 99999-9999 | contato@petshop.com</p>
+                    <p><strong>Atendimento:</strong> (11) 99999-9999 | contato@livros.com</p>
                 </div>
                 <div class="bloquinhos">
-                    <p><strong>Endereço:</strong> Rua dos Bichinhos, 123 - São Paulo, SP</p>
+                    <p><strong>Endereço:</strong> Rua dos livros, 123 - São Paulo, SP</p>
                 </div>
                 <div class="bloquinhos">
-                    <p><strong>Horário:</strong> Seg a Sáb - 9h às 18h</p>
+                    <p><strong>Horário de funcionamento do site:</strong> Seg a Sáb - 9h às 18h</p>
                 </div>
                 
                 
@@ -97,10 +94,10 @@
                 <p>
                     Visite nossos canal no instagram e no facebook
                 </p>
-                <a href="https://instagram.com/petshop" target="_blank">
+                <a href="https://instagram.com/livros" target="_blank">
                     <img src="img/instagram.png" alt="logo instagram" style="height: 50px; width: 50px;">
                 </a>
-                <a href="https://facebook.com/petshop" target="_blank">
+                <a href="https://facebook.com/livros" target="_blank">
                     <img src="img/facebook.png" alt="logo facebook" style="height: 50px; width: 50px;">
                 </a>
             </div>
